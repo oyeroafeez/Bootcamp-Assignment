@@ -1,0 +1,41 @@
+function Person(first, last, age, gender, interests) {
+  this.name = {first,last
+  };
+  this.age = age;
+  this.gender = gender;
+  this.interests = interests;
+  Person.prototype.bio = function() {
+    return (this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old and I am a' + this.gender+'. I like ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+  };
+  Person.prototype.greeting = function() {
+    return ('Hi! I\'m ' + this.name.first + '.');
+  };
+}
+function Teacher(Person){
+  this.salary=salary;
+  this.qualification=qualification;
+  this.level=level;
+  Teacher.prototype.profile =function(){
+    return ( Person.prototype.bio + 'my salary is'+ this.salary+''+ this.qualification+'I am on grade level' +this.level);
+  };
+}
+function Student(Person){
+  this.currentclass=currentclass;
+  this.bestsubject=bestsubject;
+  Student.prototype.profile=function(){
+    return (Person.prototype.bio +  'I am a' + this.currentclass +'pupil and my best subject is' + this.bestsubject);
+  };
+}
+  function Doctor(Person){
+    this.yearOfexperience=yearOfexperience;
+    this.specialization=specialization;
+    Doctor.prototype.profile=function(){
+    return (Person.prototype.bio +  'I specialize in' + this.specialization +'.I have ' + this.yearOfexperience + 'working experience');
+    };
+  }
+    function StudentDoctor(Doctor){
+      this.yearOfGraduation=yearOfGraduation;
+      StudentDoctor.prototype.profile=function(){
+    return (Person.prototype.bio +  'I shall be graduating in the year' + this.yearOfGraduation +'.I would like to specialize in ' + this.specialization);
+    };
+  }
